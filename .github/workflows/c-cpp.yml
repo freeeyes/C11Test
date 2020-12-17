@@ -11,11 +11,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-
       - name: Build C++11
         run: |
           # build Test
           g++ -std=c++11 -Wunused-function -o test test_task.cpp -pthread -ldl
           ./test
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
