@@ -1,19 +1,38 @@
-name: C/C++ CI
+name: Github-CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: g++ -std=c++11 -Wunused-function -o test test_task.cpp -pthread -ldl
-    - name: execute
-      run: ./test
+      - uses: actions/checkout@v1
+
+      - name: Build C++11
+        run: |
+          # build Test
+          g++ -std=c++11 -Wunused-function -o test test_task.cpp -pthread -ldl
+          ./test
+
+          ## sonar build wrapper and make
+          #if [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
+          #    ../build-wrapper/linux-x86-64/build-wrapper-linux-x86-64 --out-dir bw-output make -j 4
+          #elif [ "${{ matrix.os }}" = "macOS-latest" ]; then
+          #    ../build-wrapper/macosx-x86/build-wrapper-macosx-x86 --out-dir bw-output make -j 4
+          #fi
+          make -j 4
+          #ctest -j 2
+          cd ..
+
+      #- name: SonarCloud Scan
+      #  if: matrix.os == 'ubuntu-latest'
+      #  uses: sonarsource/sonarcloud-github-action@master
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
