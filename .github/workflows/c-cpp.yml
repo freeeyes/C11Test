@@ -16,7 +16,7 @@ jobs:
       - name: Build C++11
         run: |
           # build Test
-          g++ -std=c++11 -Wunused-function -L/usr/lib/x86_64-linux-gnu/  -I/usr/src/googletest/googletest/include/ -o test test_task.cpp -pthread -ldl -pgtest
+          g++ -std=c++11 -Wunused-function -L/usr/lib/x86_64-linux-gnu/  -I/usr/src/googletest/googletest/include/ -o test test_task.cpp -lpthread -ldl -lgtest
           ./test
 
 
