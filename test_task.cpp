@@ -8,6 +8,7 @@
 #include "tms.hpp"
 #include "LoadLibrary.hpp"
 #include "singleton.h"
+#include <gtest/gtest.h>
 
 using namespace std;
 
