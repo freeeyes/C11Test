@@ -7,11 +7,11 @@ TEST(run_test_iotoio, test_iotoio)
     EXPECT_EQ(a, 3);
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     //‘À––google test ≤‚ ‘”√¿˝
     ::testing::GTEST_FLAG(output) = "xml:Test_add.xml";
-    ::testing::InitGoogleTest();
+    ::testing::InitGoogleTest(&argc, argv);
 
     return RUN_ALL_TESTS();
 }
