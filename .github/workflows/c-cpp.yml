@@ -20,6 +20,6 @@ jobs:
           git config --global user.email github-actions@github.com
           git add -f test.txt
           git commit -m "Update test.txt"
-          git push origin HEAD:master
+          git push -f "https://${GH_TOKEN}@${GH_REF}" HEAD:master
 
 
