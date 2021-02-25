@@ -24,8 +24,8 @@ jobs:
         shell: bash         
         run: |
           echo "Test push commit to the remote in the workflow" >> test.txt
-          git config --global user.name 
-          git config --global user.email 
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git add -f test.txt
           git commit -m "Update test.txt"
           git push 
