@@ -20,6 +20,9 @@ jobs:
           git config --global user.email github-actions@github.com
           git add -f test.txt
           git commit -m "Update test.txt"
-          git push -f "https://${GH_TOKEN}@${GH_REF}" HEAD:master
-
+          git push
+     - name: Commit & Push changes
+       uses: actions/push@master
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
 
