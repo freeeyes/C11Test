@@ -28,6 +28,6 @@ jobs:
           git config --global user.email github-actions@github.com
           git add -f test.txt
           git commit -m "Update test.txt"
-          git push 
+          git push origin HEAD:master
 
 
