@@ -19,7 +19,7 @@ jobs:
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
           git add -f test.txt
-          git commit -m "Update test.txt"
+          git commit -m "[date]Update test.txt"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
