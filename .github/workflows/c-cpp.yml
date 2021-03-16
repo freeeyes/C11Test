@@ -16,6 +16,7 @@ jobs:
         shell: bash         
         run: |
           date > test.txt
+          ls -l
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
           git add -f test.txt
