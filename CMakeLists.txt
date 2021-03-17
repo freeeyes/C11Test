@@ -51,14 +51,18 @@ if(WIN32)
 	endif()
 endif()
 
-if(UNIX)
-	find_package(GTEST)
-	if (!GTEST_FOUND)
-    message(FATAL_ERROR "googletest library is needed but can't be found")
-	endif ()
+#if(UNIX)
+#	find_package(GTEST)
+#	if (!GTEST_FOUND)
+#    message(FATAL_ERROR "googletest library is needed but can't be found")
+#	endif ()
 	
-	link_directories(${GTEST_LIBRARY})
-	target_link_libraries(gtestexample gtest pthread)
+#	link_directories(${GTEST_LIBRARY})
+#	target_link_libraries(gtestexample gtest pthread)
+#endif()
+
+if(UNIX)
+	target_link_libraries(gtestexample pthread)
 endif()
 
 set_target_properties(gtestexample PROPERTIES 
