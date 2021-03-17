@@ -2,7 +2,7 @@ sudo: false
 
 addons:
   sonarcloud:
-    organization: "freeeyes"
+    organization: "freeeyes-github"
     token:
       secure: ${SONAR_TOKEN}
 
@@ -18,9 +18,9 @@ script:
   - build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
   # file to see the specific configuration
-  - sonar-scanner -Dsonar.login=freeeyes -Dsonar.password=free98370112 -Dsonar.cfamily.cache.enabled=true -Dsonar.cfamily.cache.path=${TRAVIS_HOME}/.cfamily -Dsonar.cfamily.threads=${NUMBER_OF_PROCESSORS}
-  #- echo ${SONAR_TOKEN}
-  #- sonar-scanner -X
+  #- sonar-scanner -Dsonar.cfamily.cache.enabled=true -Dsonar.cfamily.cache.path=${TRAVIS_HOME}/.cfamily -Dsonar.cfamily.threads=${NUMBER_OF_PROCESSORS}
+  - echo ${SONAR_TOKEN}
+  - sonar-scanner -X
 
 cache:
   directories:
