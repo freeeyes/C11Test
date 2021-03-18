@@ -3,8 +3,8 @@ sudo: false
 addons:
   sonarcloud:
     organization: "freeeyes-github"
-    token: ${SONAR_TOKEN}
-#      secure: ${SONAR_TOKEN}
+    token:
+      secure: ${SONAR_TOKEN}
 
 script:
   # Prepare the build system
