@@ -2,7 +2,7 @@ sudo: false
 
 addons:
   sonarcloud:
-    organization: "freeeyes-github"
+    organization: "openark"
     token:
       secure: "CQqvNbMwWOym1+SukKrTksADRbZM4b8aMp83TBnUxYEuKm5ul8J/kfD/tH8yOGjpFyUwgAGgnzVo9MTD/T1Ox7fR2lIuCKfIN0PnigccPdPE4uZKarDoBqA0KvvFkVd/nuS7BLyVlI6IDUdBgRHOJ25Co8D42wCnLEtQjKxlabTHSu7G7faWNZkmi0U+41K0EiQkrdK8QFUfg3bJTj5P1V90QCBOfKvq+MmAIDYd9ExSLf2O0G0j9ocx3rfkiLcEnDo2v727rVHghQuWAz/TQHpC69ui38Fc9YEiMolFUg8addtsy/avJe9cm3+6Ocq7wONsjbJ7URcCb8Stdr0ae6sepgxUM7po6fS3dPUJTTGy9V5TCXTxJ0XRm2XUiXGaikX4ychsXErUswM+aqJ1cwnJvYlg1g85v4oM7osDtgwUpmWJfex5P+skTIm2KEUN+Q6bD5LM3x/7tLMHU4QKftfegER9cwsMzjFnfrAWcwtgrpMeYMLrf0FM1azs6S6YJp4YdME1aaT9o1QbjGO5jQ1HJmiG+sXfHCqawGuXlWRaDS33IA3LNoGJB7cGsjdKjiKKC9v1ruvQtmbbJqli7RDfCE3JopRpV30r0aktb8HPPPf/qdGyb7lCa1j0+CcgDwe0YBe6pNrSGaH5RrZcNIVjdRpf+CmTmR/MPLyiwpg="
 
