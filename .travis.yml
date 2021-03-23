@@ -22,7 +22,9 @@ script:
   - echo ${SONAR_TOKEN}
   - sonar-scanner -X
   - ls -l
-  
+  - cd bw-output
+  - ls -l
+  - cat build-wrapper-dump.json
 
 cache:
   directories:
