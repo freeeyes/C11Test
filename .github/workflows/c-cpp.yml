@@ -37,7 +37,7 @@ jobs:
           cd bw-output
           ls -l
           cat build-wrapper-dump.json
-          cat ${{ secrets.SONAR_TOKEN }}
+          echo ${{ secrets.SONAR_TOKEN }}
       - name: SonarCloud Scan
         working-directory: ${{github.workspace}}
         run: |
