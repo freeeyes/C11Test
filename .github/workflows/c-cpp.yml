@@ -37,8 +37,5 @@ jobs:
           cd bw-output
           ls -l
           cat build-wrapper-dump.json
-        with:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         branch: ${{ github.ref }}
+
 
