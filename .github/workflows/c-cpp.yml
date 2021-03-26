@@ -39,8 +39,7 @@ jobs:
       - name: SonarCloud Scan
         working-directory: ${{github.workspace}}
         run: |
-          echo $SONAR_TOKEN
-          sonar-scanner -x -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+          sonar-scanner -x -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=4bd966d79197584ec668f1275123b08fed451729
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
